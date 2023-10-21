@@ -1,4 +1,4 @@
 Team Members
 * Ayaan Ajay
-* Emad Aljabry
+* Aparna Sajith 
 * Swapnil Roy
