@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Apply CSS to make the image fill the whole screen */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- The image you want to use as a map -->
+    <img src="map/Map.jpeg" usemap="#image-map">
+
+    <!-- Define the image map using the <map> element -->
+    <map name="image-map">
+        <!-- Define clickable areas using <area> elements -->
+        <area shape="rect" coords="0,0,100,100" href="https://www.example.com" alt="Area 1">
+        <area shape="circle" coords="150,150,50" href="https://www.example.com" alt="Area 2">
+    </map>
+</body>
+</html>
+
