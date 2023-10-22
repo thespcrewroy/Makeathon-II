@@ -13,6 +13,47 @@
             width: 100vw;
             height: 100vh;
         }
+
+        .dropdown {
+            position: absolute; /* Position the dropdown */
+            top: 10px; /* Adjust the top position as needed */
+            left: 10px; /* Adjust the left position as needed */
+        }
+
+        .dropdown button {
+            background-color: hsl(0, 0%, 80%);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown .content {
+            display: none; /* Hide the dropdown content by default */
+            position: absolute;
+            background-color: hsl(0, 0%, 95%);
+            min-width: 100px;
+            max-height: 200px; /* Set a maximum height for the dropdown */
+            overflow-y: auto; /* Enable vertical scrolling if content overflows */
+            box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+            border-radius: 5px; /* Add some rounded corners */
+        }
+
+        .dropdown:hover .content {
+            display: block; /* Show the dropdown content on hover */
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: black;
+            transition: background-color 0.2s; /* Add a smooth background color transition */
+        }
+
+        .dropdown a:hover {
+            background-color: hsl(0, 0%, 90%);
+        }
     </style>
 </head>
 <body>
@@ -25,6 +66,38 @@
         <area shape="rect" coords="0,0,100,100" href="https://www.example.com" alt="Area 1">
         <area shape="circle" coords="150,150,50" href="https://www.example.com" alt="Area 2">
     </map>
+
+    <!-- Dropdown menu outside the map -->
+    <div class="dropdown">
+        <button>Year</button>
+        <div class="content">
+            <a href="">1998</a>
+            <a href="">1999</a>
+            <a href="">2000</a>
+            <a href="">2001</a>
+            <a href="">2002</a>
+            <a href="">2003</a>
+            <a href="">2004</a>
+            <a href="">2005</a>
+            <a href="">2006</a>
+            <a href="">2007</a>
+            <a href="">2008</a>
+            <a href="">2009</a>
+            <a href="">2010</a>
+            <a href="">2011</a>
+            <a href="">2012</a>
+            <a href="">2013</a>
+            <a href="">2014</a>
+            <a href="">2015</a>
+            <a href="">2016</a>
+            <a href="">2017</a>
+            <a href="">2018</a>
+            <a href="">2019</a>
+            <a href="">2020</a>
+            <a href="">2021</a>
+            <a href="">2022</a>
+            <a href="">2023</a>
+        </div>
+    </div>
 </body>
 </html>
-
