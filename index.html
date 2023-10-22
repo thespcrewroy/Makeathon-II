@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: rgb(139, 197, 240);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .rotate_image {
+            position: relative;
+            left: -0px;
+            animation: slider 5s forwards;
+        }
+
+        @keyframes slider {
+            0% {
+                transform: translateX(-100px) rotate(30deg);
+                opacity: 0;
+            }
+            30% {
+                transform: translateX(0) rotate(30deg);
+                opacity: 1;
+            }
+            70% {
+                transform: translateX(0) rotate(30deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(0) rotate(30deg);
+                opacity: 1;
+            }
+        }
+
+        #speech-bubble {
+            width: 120px;
+            height: 80px;
+            background: #ffffff;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            padding: 15px; /* Add padding for text inside the bubble */
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 1s 1s forwards; /* Fade-in animation with a delay */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            30% {
+                opacity: 0.25;
+            }
+            70% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #speech-bubble:before {
+            content:"";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 13px solid transparent;
+            border-right: 26px solid #ffffff;
+            border-bottom: 13px solid transparent;
+            margin: 13px 0 0 -25px;
+        }
+
+        .dropdown{
+            display: inline-block;
+        }
+
+        .dropdown button{
+            background-color: hsl(0, 0%, 80%);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .dropdown a{
+            display: block;
+            color: black;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .dropdown .content{
+            display: none;
+            position: absolute;
+            background-color: hsl(0, 0%, 95%);
+            min-width: 100px;
+            box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+        }
+
+        .dropdown:hover .content{
+            display: block;
+        }
+
+        .dropdown:hover button{
+            background-color: hsl(0, 0%, 70%);
+        }
+
+        .dropdown a:hover{
+            background-color: hsl(0, 0%, 90%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="rotate_image" src="mascot/mascot.png">
+        <div id="speech-bubble">
+            What animal do you want to track?
+            <div class="dropdown">
+                <button>Animal</button>
+                <div class="content">
+                    <a href="https://www.questbridge.org/high-school-students/college-prep-scholars"">sea turtle</a>"
+                </div>
+        </div>
+    </div>
+</body>
+</html>
