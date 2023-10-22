@@ -2,53 +2,79 @@
 <html>
 <head>
     <style>
-        /* Apply CSS to make the image fill the whole screen */
         body, html {
             height: 100%;
             margin: 0;
             padding: 0;
         }
 
-        img {
-            width: 100vw;
-            height: 100vh;
+        .content {
+            position: relative; /* Position the content container */
+        }
+
+        img.map-image {
+            width: 100%; /* Set the image width to 100% of its container */
+            max-height: 100%; /* Ensure the image doesn't exceed the screen height */
+        }
+
+        .fast-forward {
+            position: absolute;
+            top: 10px; /* Adjust the top position as needed */
+            right: 10px; /* Adjust the right position as needed for the top right corner */
+            z-index: 999; /* Ensure it's above other elements */
+        }
+
+        #fast-forward-button {
+            background-color: hsl(0, 0%, 80%);
+            color: white;
+            padding: 5px 10px; /* Adjust the padding to make the button smaller */
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+        }
+
+        #fast-forward-image {
+            width: 20px; /* Set the width of the fast forward image */
         }
 
         .dropdown {
-            position: absolute; /* Position the dropdown */
-            top: 10px; /* Adjust the top position as needed */
-            left: 10px; /* Adjust the left position as needed */
+            position: absolute;
+            top: 10px;
+            left: 10px;
         }
 
         .dropdown button {
             background-color: hsl(0, 0%, 80%);
             color: white;
-            padding: 10px 15px;
+            padding: 5px 10px; /* Adjust the padding to match the fast-forward button */
             border: none;
             cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
         }
 
         .dropdown .content {
-            display: none; /* Hide the dropdown content by default */
+            display: none;
             position: absolute;
             background-color: hsl(0, 0%, 95%);
             min-width: 100px;
-            max-height: 200px; /* Set a maximum height for the dropdown */
-            overflow-y: auto; /* Enable vertical scrolling if content overflows */
+            max-height: 200px;
+            overflow-y: auto;
             box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
-            border-radius: 5px; /* Add some rounded corners */
+            border-radius: 5px;
         }
 
         .dropdown:hover .content {
-            display: block; /* Show the dropdown content on hover */
+            display: block;
         }
 
         .dropdown a {
             display: block;
-            padding: 10px 15px;
+            padding: 5px 10px;
             text-decoration: none;
             color: black;
-            transition: background-color 0.2s; /* Add a smooth background color transition */
+            transition: background-color 0.2s;
         }
 
         .dropdown a:hover {
@@ -57,15 +83,22 @@
     </style>
 </head>
 <body>
-    <!-- The image you want to use as a map -->
-    <img src="map/Map.jpeg" usemap="#image-map">
+    <div class="content">
+        <img src="map/Map.jpeg" class="map-image" usemap="#image-map">
 
-    <!-- Define the image map using the <map> element -->
-    <map name="image-map">
-        <!-- Define clickable areas using <area> elements -->
-        <area shape="rect" coords="0,0,100,100" href="https://www.example.com" alt="Area 1">
-        <area shape="circle" coords="150,150,50" href="https://www.example.com" alt="Area 2">
-    </map>
+        <!-- Define the image map using the <map> element -->
+        <map name="image-map">
+            <!-- Define clickable areas using <area> elements -->
+            <area shape="rect" coords="0,0,100,100" href="https://www.example.com" alt="Area 1">
+            <area shape="circle" coords="150,150,50" href="https://www.example.com" alt="Area 2">
+        </map>
+
+        <div class="fast-forward">
+            <button id="fast-forward-button">
+                <img src="fast-forward/fastforward.png" id="fast-forward-image" alt="Fast Forward">
+            </button>
+        </div>
+    </div>
 
     <!-- Dropdown menu outside the map -->
     <div class="dropdown">
